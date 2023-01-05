@@ -1,0 +1,5 @@
+MVP
+
+Interactive Chess board
+Ability to store positions in a database
+Ability to load positions on to the board from the database

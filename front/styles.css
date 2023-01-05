@@ -1,0 +1,251 @@
+body {
+  background-color: rgb(80, 80, 80);
+  color: #fff;
+  font-family: 'Brush Script MT', cursive, sans-serif;
+  
+}
+
+h1, h2 {
+  text-align: center;
+  vertical-align: middle;
+}
+
+h1::before {
+  content: url(chessp/chess.png);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+h1::after {
+  content: url(chessp/chess.png);
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+h2::before {
+  content: url(chessp/chess-pawn.png);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+h2::after {
+  content: url(chessp/chess-pawn.png);
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.chessboard {
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px;
+    height: 480px;
+    margin: 0 auto;
+  }
+  
+  .chessboard__row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 60px;
+  }
+  
+  .chessboard__square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .chessboard__row:nth-child(odd) .chessboard__square:nth-child(odd) {
+    background-color: #f0d9b5;
+  }
+  
+  .chessboard__row:nth-child(odd) .chessboard__square:nth-child(even) {
+    background-color: #b58863;
+  }
+  
+  .chessboard__row:nth-child(even) .chessboard__square:nth-child(odd) {
+    background-color: #b58863;
+  }
+  
+  .chessboard__row:nth-child(even) .chessboard__square:nth-child(even) {
+    background-color: #f0d9b5;
+  }
+  
+  .chessboard__piece {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+  }
+  
+  .chessboard__piece--black.chessboard__piece--rook {
+    background-image: url('chessp/brook.png');
+  }
+  
+  .chessboard__piece--black.chessboard__piece--knight {
+    background-image: url('chessp/bknight.png');
+  }
+  
+  .chessboard__piece--black.chessboard__piece--bishop {
+    background-image: url('chessp/bbishop.png');
+  }
+  
+  .chessboard__piece--black.chessboard__piece--queen {
+    background-image: url('chessp/bqueen.png');
+  }
+  
+  .chessboard__piece--black.chessboard__piece--king {
+    background-image: url('chessp/bking.png');
+  }
+  
+  .chessboard__piece--black.chessboard__piece--pawn {
+    background-image: url('chessp/bpawn.png');
+  }
+  
+  .chessboard__piece--white.chessboard__piece--rook {
+    background-image: url('chessp/rook.png');
+  }
+  
+  .chessboard__piece--white.chessboard__piece--knight {
+    background-image: url('chessp/knight.png');
+  }
+  
+  .chessboard__piece--white.chessboard__piece--bishop {
+    background-image: url('chessp/bishop.png');
+  }
+  
+  .chessboard__piece--white.chessboard__piece--queen {
+    background-image: url('chessp/queen.png');
+  }
+  
+  .chessboard__piece--white.chessboard__piece--king {
+    background-image: url('chessp/king.png');
+  }
+  
+  .chessboard__piece--white.chessboard__piece--pawn {
+    background-image: url('chessp/pawn.png');
+  }
+  
+  .chessboard--flipped {
+    transform: scale(1, -1);
+  }
+
+  .chesspiece--flipped {
+    transform: scale(1, -1);
+  }
+
+  #opening-form, #controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  #opening-form input[type='text'], #controls button {
+    width: 800px;
+    height: 50px;
+    font-size: 1.2rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px; 
+  }
+  
+  #opening-form input[type='text']:focus, #controls button:focus {
+    outline: none;
+  }
+  
+  #opening-form input[type='text'] {
+    margin-bottom: 10px;
+    padding: 0 10px;
+  }
+
+  #controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  #controls button {
+    width: 80px;
+    height: 30px;
+    font-family: 'Brush Script MT', cursive, sans-serif;
+    font-size: 0.8rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  #controls button:focus {
+    outline: none;
+  }
+
+  #opening-form button {
+    width: 80px;
+    height: 30px;
+    font-family: 'Brush Script MT', cursive, sans-serif;
+    font-size: 0.8rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #opening-form button:focus {
+    outline: none;
+  }
+
+  #opening-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    border-radius: 25px;
+    border: 2px solid #333; 
+    background-color: #333;
+  }
+  
+  #opening-list li {
+    width: 600px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(17, 17, 17);
+    border-radius: 5px; 
+    padding: 10px 20px;
+    margin-bottom: 10px;
+  }
+  
+  #opening-list button {
+    width: 80px;
+    height: 30px;
+    font-size: 0.8rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  #opening-list button:focus {
+    outline: none;
+  }
+  
